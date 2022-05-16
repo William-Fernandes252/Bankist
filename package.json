@@ -1,34 +1,35 @@
 {
-  "name": "bankist",
-  "version": "1.0.0",
-  "description": "A minimalist banking application built with TypeScript and JQuery.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/William-Fernandes252/Bankist.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/William-Fernandes252/Bankist/issues"
-  },
-  "homepage": "https://github.com/William-Fernandes252/Bankist#readme",
-  "devDependencies": {
-    "@types/jquery": "^3.5.14",
-    "css-loader": "^6.7.1",
-    "sass": "^1.51.0",
-    "sass-loader": "^12.6.0",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.3.0",
-    "typescript": "^4.6.4",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2"
-  },
-  "dependencies": {
-    "jquery": "^3.6.0"
-  }
+    "name": "bankist",
+    "version": "1.0.0",
+    "description": "A minimalist banking application built with TypeScript and JQuery.",
+    "main": ".src/script/index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/William-Fernandes252/Bankist.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/William-Fernandes252/Bankist/issues"
+    },
+    "homepage": "https://github.com/William-Fernandes252/Bankist#readme",
+    "devDependencies": {
+        "@types/jquery": "^3.5.14",
+        "css-loader": "^6.7.1",
+        "sass": "^1.51.0",
+        "sass-loader": "^12.6.0",
+        "style-loader": "^3.3.1",
+        "ts-loader": "^9.3.0",
+        "typescript": "^4.6.4",
+        "webpack": "^5.72.1",
+        "webpack-cli": "^4.9.2"
+    },
+    "dependencies": {
+        "jquery": "^3.6.0"
+    }
 }
