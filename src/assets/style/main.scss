@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap');
+
+$font-stack: 'Poppins', sans-serif;
+$body-bg-color: #f3f3f3;
+$body-content-color: #444;
+
+@import 'mixins';
+
+@import 'reset';
+
+body {
+    @include theme($body-bg-color, $body-content-color);
+    font-family: $font-stack;
+    height: 100%;
+    padding: 2rem;
+
+    @import 'nav';
+
+    .btn--sort:hover,
+    .btn--sort:focus {
+        outline: none;
+        color: #777;
+    }
+
+    .app {
+        position: relative;
+        max-width: 100rem;
+        margin: 4rem auto;
+        display: grid;
+        grid-template-columns: 4fr 3fr;
+        grid-template-rows: auto repeat(3, 15rem) auto;
+        gap: 2rem;
+        opacity: 0;
+        transition: all 1s;
+
+        @import 'balance';
+        @import 'movements';
+        @import 'summary';
+        @import 'operation';
+
+        .logout-timer {
+            padding: 0 0.3rem;
+            margin-top: 1.9rem;
+            text-align: right;
+            font-size: 1.25rem;
+        }
+
+        .timer {
+            font-weight: 600;
+        }
+    }
+}

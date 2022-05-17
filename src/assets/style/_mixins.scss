@@ -1,0 +1,9 @@
+@mixin theme($background: inherit, $content: inherit) {
+    background-color: $background;
+    color: $content;
+}
+
+@mixin font($size: inherit, $weight: inherit) {
+    font-size: $size;
+    font-weight: $weight;
+}
