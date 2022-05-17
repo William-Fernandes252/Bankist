@@ -101,3 +101,8 @@ typings/
 
 # TernJS port file
 .tern-port
+
+# Distribution files
+*.png
+*LICENSE.txt
+*bundle.js
