@@ -1,0 +1,58 @@
+@import 'mixins';
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    .welcome {
+        @include font(1.9rem, 500);
+    }
+
+    .logo {
+        height: 5.25rem;
+    }
+
+    .login {
+        display: flex;
+
+        &__input {
+            @include font($size: 1.6rem);
+            color: inherit;
+            border: none;
+            padding: 0.5rem 2rem;
+            font-family: inherit;
+            text-align: center;
+            width: 12rem;
+            border-radius: 10rem;
+            margin-right: 1rem;
+            border: 1px solid #fff;
+            transition: all 0.3s;
+
+            &:focus {
+                outline: none;
+                border: 1px solid #ccc;
+            }
+
+            &::placeholder {
+                color: #bbb;
+            }
+        }
+
+        &__btn {
+            border: none;
+            background: none;
+            font-size: 2.2rem;
+            color: inherit;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                color: #777;
+            }
+        }
+    }
+}

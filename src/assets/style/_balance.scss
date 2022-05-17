@@ -1,0 +1,23 @@
+@import url('./_mixins.scss');
+
+.balance {
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &__label {
+        @include font(2.2rem, 500);
+        margin-bottom: -0.2rem;
+    }
+
+    &__date {
+        @include font($size: 1.4rem);
+        color: #888;
+    }
+
+    &__value {
+        @include font(4.5rem, 400);
+    }
+}

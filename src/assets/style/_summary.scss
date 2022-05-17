@@ -1,0 +1,29 @@
+@import 'mixins';
+
+.summary {
+    grid-row: 5 / 6;
+    display: flex;
+    align-items: baseline;
+    padding: 0 0.3rem;
+    margin-top: 1rem;
+
+    &__label {
+        @include font(1.2rem, 500);
+        text-transform: uppercase;
+        margin-right: 0.8rem;
+    }
+
+    &__value {
+        @include font(2.2rem);
+        margin-right: 2.5rem;
+
+        &--in,
+        --interest {
+            color: #66c873;
+        }
+
+        &--out {
+            color: #f5465d;
+        }
+    }
+}
