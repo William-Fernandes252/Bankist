@@ -16,10 +16,18 @@ body {
 
     @import 'nav';
 
-    .btn--sort:hover,
-    .btn--sort:focus {
-        outline: none;
-        color: #777;
+    .btn--sort {
+        @include font(1.3rem, 500);
+        margin-left: auto;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            color: #777;
+        }
     }
 
     .app {
