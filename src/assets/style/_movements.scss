@@ -25,7 +25,7 @@
             background-image: linear-gradient(to top left, #39b385, #9be15d);
         }
         &--withdraw {
-            background-image: linear-gradient(to top left, #39b385, #9be15d);
+            background-image: linear-gradient(to top left, #e52a5a, #ff585f);
         }
     }
 
@@ -36,7 +36,7 @@
     }
 
     &__value {
-        @include font($size: 1.1rem);
+        @include font($size: 1.7rem);
         margin-left: auto;
     }
 }
