@@ -1,8 +1,17 @@
+declare type movement = {
+    value: number;
+    date: Date;
+};
+
 declare interface Account {
     owner: string;
-    movements: Array<number>;
-    interestRate: 1.2;
+    movements: Array<movement>;
+    interestRate: number;
+    username: string;
     pin: string;
+    balance: number | undefined;
+    locale: string;
+    currency: string;
 }
 
 declare module '*.png' {
