@@ -54,10 +54,10 @@ export const account3: Account = {
     interestRate: 1.25,
     pin: '3014',
     balance: undefined,
-    currency: 'GBR',
+    currency: 'GBP',
 };
 
-export const accounts: Array<Account> = [account1, account2];
+export const accounts: Array<Account> = [account1, account2, account3];
 
 export const currencies: Map<string, string> = new Map([
     ['USD', 'United States dollar'],
