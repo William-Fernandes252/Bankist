@@ -1,3 +1,32 @@
 # Bankist
 
-A minimalist banking application, built with TypeScript and JQuery, developed during my enroll on the [Jonas Schmedtmann Javascript course](https://www.udemy.com/course/the-complete-javascript-course/ 'Course page on Udemy').
+A minimalist banking application, built with **TypeScript** and **JQuery**, developed during my enroll on the [Jonas Schmedtmann JavaScript course](https://www.udemy.com/course/the-complete-javascript-course/ 'Course page on Udemy').
+
+![App](./snapshot/main.jpg)
+
+## About
+
+This project consists of a fake banking application developed to learn and practice JavaScript programming topics like array methods, dates manipulation, internalization and timers. It includes features like tranfers, loan requests, a logout timer and more.
+
+## Requirements
+
+-   Nodejs `v16.14.0`;
+-   NPM `v8.3.1`.
+
+## Run locally
+
+In order torun this project locally, run the following commands:
+
+-   Clone this repository with `git clone https://github.com/William-Fernandes252/Pig-Game.git`;
+-   Install the dependencies with `npm install`;
+-   And whenever you want to build the project, run `npm run build`;
+
+## Snapshot
+
+<h3 align="center">North american UI</h3>
+
+![Rules](./snapshot/usa.jpg)
+
+<h3 align="center">England UI</h3>
+
+![Winner](./snapshot/uk.jpg)
