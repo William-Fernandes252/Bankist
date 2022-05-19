@@ -37,6 +37,26 @@ export const account2: Account = {
     currency: 'USD',
 };
 
+export const account3: Account = {
+    owner: 'Elizabeth Olsen',
+    username: 'eo',
+    movements: [
+        { value: 4500, date: new Date(2022, 4, 16) },
+        { value: -400, date: new Date(2022, 4, 17) },
+        { value: -150, date: new Date(2022, 4, 20) },
+        { value: 90, date: new Date(2022, 4, 21) },
+        { value: -10, date: new Date(2022, 4, 22) },
+        { value: -100, date: new Date(2022, 4, 24) },
+        { value: 500, date: new Date(2022, 4, 25) },
+        { value: -30, date: new Date(2022, 4, 28) },
+    ],
+    locale: 'en-GB',
+    interestRate: 1.25,
+    pin: '3014',
+    balance: undefined,
+    currency: 'GBR',
+};
+
 export const accounts: Array<Account> = [account1, account2];
 
 export const currencies: Map<string, string> = new Map([
