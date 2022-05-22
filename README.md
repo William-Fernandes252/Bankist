@@ -6,7 +6,12 @@ A minimalist banking application, built with **TypeScript** and **JQuery**, deve
 
 ## About
 
-This project consists of a fake banking application developed to learn and practice JavaScript programming topics like array methods, dates manipulation, internalization and timers. It includes features like tranfers, loan requests, a logout timer and more.
+This project consists of a fake banking application developed to learn and practice JavaScript programming topics like array methods, dates manipulation, internalization and timers. It includes features like tranfers, loan requests, a logout timer and more. Also, as a plus, I
+
+-   refactored the project to structure the data using OOP;
+-   applied webpack as module bundler;
+-   Used TypeScript to add type safety;
+-   Used JQuery in the UI to facilitate the DOM manipulation.
 
 ## Requirements
 
