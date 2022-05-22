@@ -1,11 +1,12 @@
-import * as data from './data';
+import accounts from './data';
+import * as models from './models';
 import * as elements from './elements';
 import * as utils from './utils';
 
 let timer: NodeJS.Timer;
 
 export function displayMovements(
-    account: Account,
+    account: models.Account,
     conteiner: JQuery<HTMLElement>,
     sort: boolean = false
 ) {
@@ -38,31 +39,34 @@ export function displayMovements(
 }
 
 export function displaySummary(
-    account: Account,
+    account: models.Account,
     inLabel: JQuery<HTMLElement>,
     outLabel: JQuery<HTMLElement>,
     interestLabel: JQuery<HTMLElement>
 ) {
-    const incomes = data.calcIncomesSum(account.movements);
+    const incomes = account.totalIncomes();
     inLabel.text(
         utils.formatCurrency(incomes, account.locale, account.currency)
     );
 
-    const out = data.calcWitdrawalsSum(account.movements);
+    const out = account.totalWithdrawals();
     outLabel.text(utils.formatCurrency(out, account.locale, account.currency));
 
-    const interest = data.calcInterestSum(account);
+    const interest = account.interest();
     interestLabel.text(
         utils.formatCurrency(interest, account.locale, account.currency)
     );
 }
 
-export function displayBalance(account: Account, label: JQuery<HTMLElement>) {
-    const balance = data.calcBalance(account);
+export function displayBalance(
+    account: models.Account,
+    label: JQuery<HTMLElement>
+) {
+    const balance = account.balance;
     label.text(utils.formatCurrency(balance, account.locale, account.currency));
 }
 
-export function update(account: Account) {
+export function update(account: models.Account) {
     displayMovements(account, elements.containerMovements);
     displayBalance(account, elements.labelBalance);
     displaySummary(
@@ -104,8 +108,8 @@ function startLogOutTimer(labelTimer: JQuery<HTMLElement>) {
     return logoutTimer;
 }
 
-export function loginAccount(): Account | undefined {
-    const account = data.accounts.find(
+export function loginAccount(): models.Account | undefined {
+    const account = accounts.find(
         account => account.username === elements.inputLoginUsername.val()
     );
     const pin = elements.inputLoginPin.val();
@@ -137,9 +141,9 @@ export function loginAccount(): Account | undefined {
     }
 }
 
-export function makeTransfer(payer: Account): boolean {
+export function makeTransfer(payer: models.Account): boolean {
     const amount = Number(elements.inputTransferAmount.val());
-    const receiver = data.accounts.find(
+    const receiver = accounts.find(
         account => account.username === elements.inputTransferTo.val()
     );
     utils.clearFields(elements.inputTransferAmount, elements.inputTransferTo);
@@ -151,7 +155,7 @@ export function makeTransfer(payer: Account): boolean {
         payer.balance >= amount &&
         receiver.username !== payer.username
     ) {
-        return data.transfer(payer, receiver, amount);
+        return models.Account.transfer(payer, receiver, amount);
     }
 
     clearInterval(timer);
@@ -160,14 +164,14 @@ export function makeTransfer(payer: Account): boolean {
     return false;
 }
 
-export function closeAccount(account: Account | undefined): boolean {
+export function closeAccount(account: models.Account | undefined): boolean {
     const username = elements.inputCloseUsername.val();
     const pin = elements.inputClosePin.val();
     utils.clearFields(elements.inputCloseUsername, elements.inputClosePin);
 
     if (account && account.pin === pin && account.username === username) {
-        data.accounts.splice(
-            data.accounts.findIndex(
+        accounts.splice(
+            accounts.findIndex(
                 account => account.username === username && account.pin === pin
             )
         );
@@ -177,7 +181,7 @@ export function closeAccount(account: Account | undefined): boolean {
     return false;
 }
 
-export function requestLoan(account: Account | undefined): boolean {
+export function requestLoan(account: models.Account | undefined): boolean {
     const amount = Number(elements.inputLoanAmount.val());
     utils.clearFields(elements.inputLoanAmount);
 
@@ -186,7 +190,7 @@ export function requestLoan(account: Account | undefined): boolean {
         amount > 0 &&
         account.movements.some(movement => movement.value >= amount * 0.1)
     ) {
-        account.movements.push({ value: amount, date: new Date() });
+        account.deposit(amount);
         return true;
     }
 
