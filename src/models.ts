@@ -60,6 +60,9 @@ export class Account implements Bankist.IAccount {
     get balance(): number {
         return this.#balance;
     }
+    get interestRate(): number {
+        return this.#interestRate;
+    }
 
     _evalBalance() {
         this.#balance = this.#movements.reduce(
