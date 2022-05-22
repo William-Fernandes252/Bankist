@@ -1,4 +1,5 @@
 import * as elements from './elements';
+import { Account } from './models';
 import * as ui from './ui';
 import './assets/style/main.scss';
 
