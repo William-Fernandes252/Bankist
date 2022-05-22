@@ -7,19 +7,22 @@ declare namespace Bankist {
     }
 
     interface IAccount {
-        #owner: string;
-        #username: string;
-        #movements: Array<movement>;
-        #interestRate: number;
-        #username: string;
-        #pin: string;
-        #balance: number | undefined;
-        #locale: string;
-        #currency: string;
-        #balance: number;
+        owner: string;
+        username: string;
+        movements: Array<movement>;
+        interestRate: number;
+        username: string;
+        pin: string;
+        balance: number;
+        locale: string;
+        currency: string;
+        balance: number;
         _validateMovement: (value: number) => boolean;
         deposit: (value: number) => IAccount;
         withdraw: (value: number) => IAccount;
+        totalIncomes: () => number;
+        totalWithdrawals: () => number;
+        interest: () => number;
     }
 }
 
