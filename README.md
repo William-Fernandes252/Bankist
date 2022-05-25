@@ -22,7 +22,7 @@ This project consists of a fake banking application developed to learn and pract
 
 In order torun this project locally, run the following commands:
 
--   Clone this repository with `git clone https://github.com/William-Fernandes252/Pig-Game.git`;
+-   Clone this repository with `git clone https://github.com/William-Fernandes252/Bankist.git`;
 -   Install the dependencies with `npm install`;
 -   And whenever you want to build the project, run `npm run build`;
 -   Also, you can try login with one of the accounts defined in the data module with it's username and pin (like 'wf' and '1111', for example).
